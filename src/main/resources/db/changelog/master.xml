@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <include file="changes/V1/create-governorates-lookup.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/insert-governorate-lookups-values.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-city-lookup.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-status-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/insert-data-into-status-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/insert-city-lookup-values.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-role-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-user-type-lookup-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/insert-data-into-user-type-lookup.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-branch-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-user-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-user-role.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-accounts-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-customers-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-sim-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-table-transaction-type-lookup.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/create-transaction-history-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/alter-customers-table-to-add-status.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/alter-customers-table-to-add-branch.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

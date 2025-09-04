@@ -1,0 +1,34 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create branch table" labels="DDL" author="mohamed samy">
+        <sql>
+            create table branch (
+                            id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                            code VARCHAR(100),
+                            name_en VARCHAR(100),
+                            name_ar VARCHAR(100),
+                            user_id BIGINT
+            )
+        </sql>
+    </changeSet>
+
+    <changeSet id="alter branch table to add new columns" labels="DDL" author="mohamed samy">
+        <sql>
+            ALTER TABLE branch ADD COLUMN governorate_id BIGINT, ADD COLUMN city_id BIGINT;
+        </sql>
+    </changeSet>
+
+    <changeSet id="alter branch table to add constrains" labels="DDL" author="mohamed samy">
+        <sql>
+            ALTER TABLE branch  ADD CONSTRAINT fk_branch_governorate FOREIGN KEY (governorate_id) REFERENCES governorate_lookup(id);
+        </sql>
+        <sql>
+            ALTER TABLE branch  ADD CONSTRAINT fk_branch_city FOREIGN KEY (city_id) REFERENCES city_lookup(id);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
+

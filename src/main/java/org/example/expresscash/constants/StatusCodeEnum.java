@@ -1,0 +1,18 @@
+package org.example.expresscash.constants;
+
+public enum StatusCodeEnum {
+    CITY_NOT_FOUND,
+    GOVERNORATE_NOT_FOUND,
+    USER_NOT_FOUND,
+    BRANCH_NOT_FOUND,
+    TOKEN_EXPIRED,
+    INVALID_USER_TYPE,
+    SIM_NOT_FOUND,
+    UNAUTHORIZED_ACTION,
+    USER_NOT_ALLOWED,
+    INTERNAL_SERVER_ERROR,
+    BAD_REQUEST,
+    FORBIDDEN,
+    NOT_FOUND,
+    UNAUTHORIZED, GENERAL_ERROR
+}

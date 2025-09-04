@@ -1,0 +1,19 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create user type lookup lookup table" labels="DDL" author="mohamed samy">
+        <sql>
+            CREATE TABLE user_type (
+                   id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                   code VARCHAR(255) UNIQUE NOT NULL,
+                   name_en VARCHAR(255) UNIQUE NOT NULL,
+                   name_ar VARCHAR(255) UNIQUE NOT NULL
+            );
+
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

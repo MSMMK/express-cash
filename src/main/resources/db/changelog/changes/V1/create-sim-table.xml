@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create sim table" labels="DDL" author="mohamed samy">
+        <sql>
+            CREATE TABLE sim_details(
+                            id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                            phone_number VARCHAR(100) not null,
+                            branch_id BIGINT,
+                            total_balance BIGINT,
+                            daily_balance BIGINT,
+                            monthly_balance BIGINT,
+                            notes varchar(500),
+                            status_id BIGINT,
+                            customer_id BIGINT,
+                            FOREIGN KEY(branch_id) REFERENCES branch(id),
+                            FOREIGN KEY(status_id) REFERENCES status(id),
+                            FOREIGN KEY(customer_id) REFERENCES customer(id)
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
+

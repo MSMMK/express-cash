@@ -1,0 +1,16 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="alter customers table to add status" labels="DDL" author="mohamed samy">
+        <sql>
+            ALTER TABLE customer ADD status_id BIGINT;
+        </sql>
+        <sql>
+            ALTER TABLE customer add FOREIGN KEY(status_id) REFERENCES status(id)
+        </sql>
+    </changeSet>
+</databaseChangeLog>
+

@@ -1,0 +1,19 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create user role table" labels="DDL" author="mohamed samy">
+        <sql>
+            create table user_roles (
+                    user_id bigint not null,
+                    role_id bigint not null,
+                    primary key (user_id, role_id),
+                    FOREIGN KEY (user_id) REFERENCES users(id),
+                    FOREIGN KEY (role_id) REFERENCES roles(id)
+            )
+        </sql>
+    </changeSet>
+</databaseChangeLog>
+

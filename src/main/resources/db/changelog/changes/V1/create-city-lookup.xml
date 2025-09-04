@@ -1,0 +1,20 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create city table" labels="DDL" author="mohamed samy">
+        <sql>
+            CREATE TABLE city_lookup(
+                                        id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                                        code VARCHAR(100),
+                                        name_en VARCHAR(100),
+                                        name_ar VARCHAR(100),
+                                        governorate_id BIGINT NOT NULL,
+                                        CONSTRAINT fk_gov FOREIGN KEY(governorate_id) REFERENCES governorate_lookup(id)
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
+

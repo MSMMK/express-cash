@@ -1,0 +1,23 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create accounts table" labels="DDL" author="mohamed samy">
+        <sql>
+            CREATE TABLE accounts(
+                            id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                            phone_number VARCHAR(100),
+                            cif VARCHAR(100),
+                            serial_number VARCHAR(100),
+                            password varchar(100),
+                            user_id BIGINT,
+                            branch_id BIGINT,
+                            FOREIGN KEY(user_id) REFERENCES users(id),
+                            FOREIGN KEY(branch_id) REFERENCES branch(id)
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
+

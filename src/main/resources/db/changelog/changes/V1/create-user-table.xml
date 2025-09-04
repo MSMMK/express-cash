@@ -1,0 +1,32 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create user table" labels="DDL" author="mohamed samy">
+        <sql>
+                CREATE TABLE users (
+                            id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                            username VARCHAR(255) NOT NULL,
+                            email VARCHAR(255) UNIQUE NOT NULL,
+                            password VARCHAR(255) NOT NULL,
+                            profile_image VARCHAR(512),
+                            user_type_id BIGINT,
+                            city_id BIGINT,
+                            status_id BIGINT,
+                            governorate_id BIGINT,
+                            manager_id BIGINT DEFAULT NULL,
+                            branch_id BIGINT,
+                            role VARCHAR(20),
+                            FOREIGN KEY (city_id) REFERENCES city_lookup(id),
+                            FOREIGN KEY (governorate_id) REFERENCES governorate_lookup(id),
+                            FOREIGN KEY (user_type_id) REFERENCES user_type(id),
+                            FOREIGN KEY (user_type_id) REFERENCES status(id),
+                            FOREIGN KEY (branch_id) REFERENCES branch(id),
+                            FOREIGN KEY (manager_id) REFERENCES users(id)
+                 );
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

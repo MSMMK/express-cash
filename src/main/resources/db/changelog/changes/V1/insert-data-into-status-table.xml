@@ -1,0 +1,14 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert data into status lookup table" labels="DML" author="mohamed samy">
+        <sql>
+            INSERT INTO status VALUES (1, 'ACTIVE', 'Active', 'نشط');
+            INSERT INTO status VALUES (2, 'INACTIVE', 'Inactive', 'غير نشط');
+            INSERT INTO status VALUES (3, 'DELETED', 'deleted', 'تم الحذف');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,14 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+        <changeSet id="insert data into user type lookup lookup table" labels="DML" author="mohamed samy">
+            <sql>
+                INSERT INTO user_type VALUES (1, 'ADMIN', 'admin', 'مدير عام');
+                INSERT INTO user_type VALUES (2, 'BRANCH_MANAGER', 'Branch Manager', 'مدير فرع');
+                INSERT INTO user_type VALUES (3, 'USER', 'user', 'عامل');
+            </sql>
+        </changeSet>
+</databaseChangeLog>

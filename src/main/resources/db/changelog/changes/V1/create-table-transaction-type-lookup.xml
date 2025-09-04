@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create transaction_type_lookup table" labels="DDL" author="mohamed samy">
+        <sql>
+            create table transaction_type_lookup (
+                                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                                    code VARCHAR(100),
+                                    name_en VARCHAR(100),
+                                    name_ar VARCHAR(100)
+            )
+        </sql>
+    </changeSet>
+
+    <changeSet id="insert data into tranaction type table" labels="DML" author="mohamed samy">
+        <sql>
+            INSERT INTO transaction_type_lookup(id, code, name_en, name_ar) VALUES (1, 'DEPOSIT', 'Deposit', 'ايداع');
+            INSERT INTO transaction_type_lookup(id, code, name_en, name_ar) VALUES (2, 'WITHDRAW', 'Withdraw', 'سحب');
+        </sql>
+    </changeSet>
+</databaseChangeLog>
+

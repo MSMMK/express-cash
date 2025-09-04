@@ -1,0 +1,38 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create transaction history table" labels="DDL" author="mohamed samy">
+        <sql>
+            create table transaction_history (
+                id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                user_id BIGINT,
+                customer_id BIGINT,
+                sim_id BIGINT,
+                branch_id BIGINT,
+                transaction_type_id BIGINT,
+                customer_phone_number VARCHAR(15),
+                transaction_amount DOUBLE,
+                discount DOUBLE,
+                CREATION_DATE TIMESTAMP,
+                LAST_MODIFICATION_DATE TIMESTAMP,
+                one_egp INT DEFAULT 0,
+                five_egp INT DEFAULT 0,
+                ten_egp INT DEFAULT 0,
+                twenty_egp INT DEFAULT 0,
+                fifty_egp INT DEFAULT 0,
+                one_hundred_egp INT DEFAULT 0,
+                two_hundred_egp INT DEFAULT 0,
+                notes VARCHAR(500),
+                FOREIGN KEY(user_id) REFERENCES users(id),
+                FOREIGN KEY(customer_id) REFERENCES customer(id),
+                FOREIGN KEY(sim_id) REFERENCES sim_details(id),
+                FOREIGN KEY(branch_id) REFERENCES branch(id),
+                FOREIGN KEY(transaction_type_id) REFERENCES transaction_type_lookup(id)
+            )
+        </sql>
+    </changeSet>
+</databaseChangeLog>
+
