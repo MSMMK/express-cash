@@ -41,7 +41,7 @@ spring:
                   expiration: 15
       
       liquibase:
-            enabled: true
+            enabled: false
             default-schema: ${DATABASE_NAME:express}
             change-log: classpath:db/changelog/master.xml
       
