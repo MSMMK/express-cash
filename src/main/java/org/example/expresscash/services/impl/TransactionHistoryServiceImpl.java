@@ -15,13 +15,13 @@ import org.example.expresscash.repositories.TransactionHistoryRepository;
 import org.example.expresscash.repositories.TransactionTypeRepository;
 import org.example.expresscash.services.AuthService;
 import org.example.expresscash.services.TransactionHistoryService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.example.expresscash.utils.ExcelExportService;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,6 +32,7 @@ public class TransactionHistoryServiceImpl implements TransactionHistoryService 
     private final TransactionTypeRepository transactionTypeRepository;
     private final TransactionHistoryMapper transactionHistoryMapper;
     private final AuthService authService;
+    private final ExcelExportService excelExportService;
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -63,5 +64,11 @@ public class TransactionHistoryServiceImpl implements TransactionHistoryService 
                     }
                     return transactionHistory;
                 }).orElseThrow(() -> new BusinessException(StatusCodeEnum.USER_NOT_ALLOWED, "user not allowed to delete this transaction"));
+    }
+
+    @Override
+    public ResponseEntity<byte[]> export(SearchCriteria searchCriteria, Pageable pageable) {
+        List<TransactionHistoryModel> transactions = listTransactions(searchCriteria, pageable);
+        return excelExportService.exportDataToExcel(transactions);
     }
 }

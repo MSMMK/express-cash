@@ -6,39 +6,39 @@
 
     <changeSet id="add data to governorates" labels="DML" author="mohamed samy">
         <sql>
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(1, 'Cairo', 'القاهرة','Cairo');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(2, 'Giza', 'الجيزة','Giza');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(3,'Alexandria','الأسكندرية','Alexandria');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(4,'Dakahlia','الدقهلية','Dakahlia');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(5, 'Red_Sea','البحر الأحمر','Red Sea');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(6, 'Beheira','البحيرة','Beheira');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(7,'Fayoum','الفيوم','Fayoum');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(8,'Gharbiya','الغربية','Gharbiya');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(9,'Ismailia','الإسماعلية','Ismailia');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(10,'Menofia','المنوفية','Menofia');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(11,'Minya','المنيا','Minya');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(12,'Qaliubiya','القليوبية','Qaliubiya');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(13,'New_Valley','الوادي الجديد','New Valley');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(14,'Suez','السويس','Suez');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(15,'Aswan','اسوان','Aswan');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(16,'Assiut','اسيوط','Assiut');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(17,'Beni_Suef','بني سويف','Beni Suef');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(18,'Port_Said','بورسعيد','Port Said');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(19,'Damietta','دمياط','Damietta');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(20,'Sharkia','الشرقية','Sharkia');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(21,'South_Sinai','جنوب سيناء','South Sinai');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(22,'Kafr_Al_sheikh','كفر الشيخ','Kafr Al sheikh');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(23,'Matrouh','مطروح','Matrouh');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(24,'Luxor','الأقصر','Luxor');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(25,'Qena','قنا','Qena');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(26,'North_Sinai','شمال سيناء','North Sinai');
-            INSERT INTO express.governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(27,'Sohag','سوهاج','Sohag');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(1, 'Cairo', 'القاهرة','Cairo');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(2, 'Giza', 'الجيزة','Giza');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(3,'Alexandria','الأسكندرية','Alexandria');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(4,'Dakahlia','الدقهلية','Dakahlia');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(5, 'Red_Sea','البحر الأحمر','Red Sea');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(6, 'Beheira','البحيرة','Beheira');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(7,'Fayoum','الفيوم','Fayoum');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(8,'Gharbiya','الغربية','Gharbiya');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(9,'Ismailia','الإسماعلية','Ismailia');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(10,'Menofia','المنوفية','Menofia');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(11,'Minya','المنيا','Minya');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(12,'Qaliubiya','القليوبية','Qaliubiya');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(13,'New_Valley','الوادي الجديد','New Valley');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(14,'Suez','السويس','Suez');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(15,'Aswan','اسوان','Aswan');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(16,'Assiut','اسيوط','Assiut');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(17,'Beni_Suef','بني سويف','Beni Suef');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(18,'Port_Said','بورسعيد','Port Said');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(19,'Damietta','دمياط','Damietta');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(20,'Sharkia','الشرقية','Sharkia');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(21,'South_Sinai','جنوب سيناء','South Sinai');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(22,'Kafr_Al_sheikh','كفر الشيخ','Kafr Al sheikh');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(23,'Matrouh','مطروح','Matrouh');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(24,'Luxor','الأقصر','Luxor');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(25,'Qena','قنا','Qena');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(26,'North_Sinai','شمال سيناء','North Sinai');
+            INSERT INTO governorate_lookup(ID, CODE, NAME_AR, NAME_EN) VALUES(27,'Sohag','سوهاج','Sohag');
         </sql>
     </changeSet>
 
     <changeSet id="update governorates" labels="DML" author="mohamed samy">
         <sql>
-            UPDATE express.governorate_lookup set code = name_en;
+            UPDATE governorate_lookup set code = name_en;
         </sql>
     </changeSet>
 
