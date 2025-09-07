@@ -89,7 +89,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.setAllowedOrigins(Arrays.asList(
-                "https://express-cash-mo9a7ge88-mohamed-samys-projects-cb51b34c.vercel.app", // frontend URL
+                "https://express-cash.vercel.app", // frontend URL
                 "http://localhost:4200" // local dev
         ));
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
