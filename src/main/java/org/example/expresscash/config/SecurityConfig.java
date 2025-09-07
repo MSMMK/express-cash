@@ -70,7 +70,7 @@ public class SecurityConfig {
     @Bean
     public UrlBasedCorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Arrays.asList("http://localhost:4200"));  // Replace with your frontend URL
+        corsConfig.setAllowedOrigins(Arrays.asList("https://express-cash-mo9a7ge88-mohamed-samys-projects-cb51b34c.vercel.app"));  // Replace with your frontend URL
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfig.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization"));
         corsConfig.setAllowCredentials(true);  // Allow credentials (cookies, etc.)
