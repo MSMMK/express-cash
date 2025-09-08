@@ -47,7 +47,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults()) // ✅ Enable CORS
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/auth/login", "images/**").permitAll(); // Login open
+                    auth.requestMatchers("/auth/login", "/images/**").permitAll(); // Login open
                     auth.requestMatchers(
                             "/v3/api-docs/**",
                             "/swagger-ui.html",
@@ -89,7 +89,8 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.setAllowedOrigins(Arrays.asList(
-                "https://express-cash.vercel.app", // frontend URL
+                "https://express-cash.vercel.app",
+                "https://express-cash-mohamed-samys-projects-cb51b34c.vercel.app/",
                 "http://localhost:4200" // local dev
         ));
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
