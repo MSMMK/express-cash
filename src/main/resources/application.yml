@@ -1,0 +1,66 @@
+server:
+      port: 5005
+      servlet:
+            context-path: /api
+
+spring:
+      application:
+            name: express-cash
+      
+      datasource:
+            url: jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:3306}/${DATABASE_NAME:express}
+            #            url: jdbc:mysql://9cuqig.h.filess.io:3307/express_pluralhim
+            username: ${DATABASE_USER:root}
+            #            username: express_pluralhim
+            password: ${DATABASE_PASSWORD:Medo1234}
+            #            password: 706fbb0f0d47f80cfe137b2577e170a1897cf6ff
+            driver-class-name: com.mysql.cj.jdbc.Driver
+            hikari:
+                  maximum-pool-size: 3
+                  minimum-idle: 1
+                  idle-timeout: 30000
+                  pool-name: MyHikariCP
+                  max-lifetime: 1800000
+                  connection-timeout: 30000
+      
+      jpa:
+            show-sql: true
+            open-in-view: true
+            database-platform: org.hibernate.dialect.MySQLDialect
+      
+      media:
+            location: /home/mohamed/images
+      
+      web:
+            resources:
+                  static-locations: file:///home/mohamed/images
+      
+      security:
+            jwt:
+                  secret-key: adsafsdf-5465464-asdgsgfdg-54465464
+                  expiration: 15
+      
+      liquibase:
+            enabled: false
+            default-schema: ${DATABASE_NAME:express}
+            change-log: classpath:db/changelog/master.xml
+      
+      cache:
+            type: redis
+      
+      data:
+            redis:
+                  host: localhost
+                  port: 6379
+      
+      servlet:
+            multipart:
+                  enabled: true
+                  max-file-size: 5MB
+                  max-request-size: 5MB
+
+token:
+      secret:
+            key: 5367566859703373367639792F423F452848284D6251655468576D5A71347437
+      expiration:
+            ms: 3600000
