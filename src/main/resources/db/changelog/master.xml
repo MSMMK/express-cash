@@ -24,4 +24,5 @@
     <include file="changes/V1/create-transaction-history-table.xml" relativeToChangelogFile="true"/>
     <include file="changes/V1/alter-customers-table-to-add-status.xml" relativeToChangelogFile="true"/>
     <include file="changes/V1/alter-customers-table-to-add-branch.xml" relativeToChangelogFile="true"/>
+    <include file="changes/V1/alter-table-transactions-to-add-field.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

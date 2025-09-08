@@ -40,6 +40,8 @@ public class TransactionHistory {
 
     @Column(name = "transaction_amount")
     private BigDecimal amount;
+    @Column(name = "transaction_id")
+    private String transactionId;
 
     private BigDecimal discount;
     private LocalDateTime creationDate;

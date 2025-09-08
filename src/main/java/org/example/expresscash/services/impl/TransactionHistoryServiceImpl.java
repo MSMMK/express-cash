@@ -8,17 +8,20 @@ import org.example.expresscash.constants.StatusCodeEnum;
 import org.example.expresscash.constants.UserTypeEnum;
 import org.example.expresscash.entity.TransactionHistory;
 import org.example.expresscash.exceptions.BusinessException;
+import org.example.expresscash.mappers.SimMapper;
 import org.example.expresscash.mappers.TransactionHistoryMapper;
 import org.example.expresscash.model.SearchCriteria;
 import org.example.expresscash.model.TransactionHistoryModel;
 import org.example.expresscash.repositories.TransactionHistoryRepository;
 import org.example.expresscash.repositories.TransactionTypeRepository;
 import org.example.expresscash.services.AuthService;
+import org.example.expresscash.services.SimService;
 import org.example.expresscash.services.TransactionHistoryService;
 import org.example.expresscash.utils.ExcelExportService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -27,12 +30,15 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Transactional
 public class TransactionHistoryServiceImpl implements TransactionHistoryService {
     private final TransactionHistoryRepository transactionHistoryRepository;
     private final TransactionTypeRepository transactionTypeRepository;
     private final TransactionHistoryMapper transactionHistoryMapper;
     private final AuthService authService;
     private final ExcelExportService excelExportService;
+    private final SimService simService;
+    private final SimMapper simMapper;
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -43,7 +49,8 @@ public class TransactionHistoryServiceImpl implements TransactionHistoryService 
         history.setUser(authService.authUser());
         history.setCreationDate(LocalDateTime.now());
         history.setLastModificationDate(LocalDateTime.now());
-        transactionHistoryRepository.save(history);
+        history = transactionHistoryRepository.save(history);
+        simService.updateSim(simMapper.toModel(history.getSim()), model.getAmount(), model.getTransactionType());
     }
 
     @Override

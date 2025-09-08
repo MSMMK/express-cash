@@ -18,7 +18,7 @@ import java.util.Base64;
 @Slf4j
 public class FileUtil {
 
-    private static String UPLOAD_DIR = "/home/mohamed/images";
+    private static String UPLOAD_DIR = "uploads/images/";
     public static String saveFile(String username, String base64Image) {
         try {
             // 1. Extract image file extension from Base64 string
@@ -47,9 +47,7 @@ public class FileUtil {
             }
 
             // 7. Generate the image URL (you can serve it as static content or using a web server)
-            String imageUrl = UPLOAD_DIR + fileName;  // URL format: /images/username.png
-
-            return imageUrl;
+            return "/images/" + fileName;  // URL format: /images/username.png
         } catch (IOException e) {
             log.error("ERROR {}", e);
             throw new BusinessException(StatusCodeEnum.GENERAL_ERROR, "Image Not Valid");

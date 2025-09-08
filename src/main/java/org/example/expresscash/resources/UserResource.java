@@ -21,4 +21,9 @@ public class UserResource {
     public List<UserModel> listUsers(@RequestBody SearchCriteria searchCriteria, Pageable pageable) {
         return userService.search(searchCriteria, pageable);
     }
+
+    @DeleteMapping("{id}")
+    public void deleteUser(@PathVariable Long id) {
+        this.userService.deleteUser(id);
+    }
 }

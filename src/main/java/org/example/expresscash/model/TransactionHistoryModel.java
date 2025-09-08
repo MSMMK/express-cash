@@ -23,6 +23,7 @@ public class TransactionHistoryModel {
     private int fiftyEgp;
     private int oneHundredEgp;
     private int twoHundredEgp;
+    private String transactionId;
     private String notes;
     private LocalDateTime creationDate;
 }

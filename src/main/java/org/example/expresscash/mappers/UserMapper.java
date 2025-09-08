@@ -15,8 +15,4 @@ public interface UserMapper {
     })
     UserModel toModel(User user);
 
-    @AfterMapping
-    default void mapImage(@MappingTarget UserModel model, User user) {
-        model.setProfileImage("http://localhost:5050.api" + user.getProfileImage());
-    }
 }
