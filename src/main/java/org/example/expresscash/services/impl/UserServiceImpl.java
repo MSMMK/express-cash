@@ -46,10 +46,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(Long id) {
-        if (authService.authUser().getUserType().getCode().equals(UserTypeEnum.ADMIN)) {
-            throw new BusinessException(StatusCodeEnum.USER_NOT_ALLOWED, "This User Not Allowed To Take This Action");
-        }
-
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new BusinessException(StatusCodeEnum.USER_NOT_FOUND, "User not Found"));
 

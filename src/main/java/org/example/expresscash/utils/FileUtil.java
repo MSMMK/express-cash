@@ -18,7 +18,7 @@ import java.util.Base64;
 @Slf4j
 public class FileUtil {
 
-    private static String UPLOAD_DIR = "uploads/images/";
+    private static String UPLOAD_DIR = "src/main/resources/static/images/";
     public static String saveFile(String username, String base64Image) {
         try {
             // 1. Extract image file extension from Base64 string

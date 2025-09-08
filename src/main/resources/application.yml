@@ -33,7 +33,8 @@ spring:
       
       web:
             resources:
-                  static-locations: file:///home/mohamed/images
+                  static-locations: classpath:/static/
+      
       
       security:
             jwt:
